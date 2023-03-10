@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Score Counter</title>
+    <style>
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .scores {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .score {
+        width: 48%;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        margin-top: 50px;
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+
+      p {
+        font-size: 36px;
+        font-weight: bold;
+        margin: 20px 0;
+      }
+
+      button {
+        font-size: 18px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #0062cc;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Score Counter</h1>
+      <div class="scores">
+        <div class="score">
+          <h2>Local Score</h2>
+          <p id="localScore">0</p>
+          <button id="localIncrement">Increment</button>
+        </div>
+        <div class="score">
+          <h2>Session Score</h2>
+          <p id="sessionScore">0</p>
+          <button id="sessionIncrement">Increment</button>
+        </div>
+      </div>
+    </div>
+    <script>
+    
+        let localScore = localStorage.getItem('localScore');
+        if (localScore === null) {
+        localScore = 0;
+        } else {
+        localScore = parseInt(localScore);
+        }
+
+        let sessionScore = sessionStorage.getItem('sessionScore');
+        if (sessionScore === null) {
+        sessionScore = 0;
+        } else {
+        sessionScore = parseInt(sessionScore);
+        }
+
+        // Display the scores on the page
+        document.getElementById('localScore').textContent = localScore;
+        document.getElementById('sessionScore').textContent = sessionScore;
+
+        // Add event listeners to the increment buttons
+        document.getElementById('localIncrement').addEventListener('click', function() {
+        localScore++;
+        localStorage.setItem('localScore', localScore);
+        document.getElementById('localScore').textContent = localScore;
+        });
+
+        document.getElementById('sessionIncrement').addEventListener('click', function() {
+        sessionScore++;
+        sessionStorage.setItem('sessionScore', sessionScore);
+        document.getElementById('sessionScore').textContent = sessionScore;
+        });
+
+    </script>
+  </body>
+</html>

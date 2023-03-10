@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Session</title>
+</head>
+<body>
+	<h1>Session</h1>
+	<p>Session value: <span id="sessionValue"></span></p>
+	<button onclick="setSession()">Set Session Value</button>
+	<button onclick="getSession()">Get Session Value</button>
+	<button onclick="clearSession()">Clear Session Value</button>
+
+	   <script>
+        
+            function setSession() {
+                sessionStorage.setItem('sessionValue', 'Hello, World!');
+                alert('Session value set successfully!');
+            }
+
+        
+            function getSession() {
+                const sessionValue = sessionStorage.getItem('sessionValue');
+                if (sessionValue) {
+                    document.getElementById('sessionValue').textContent = sessionValue;
+                } else {
+                    alert('No session value found.');
+                }
+            }
+
+            function clearSession() {
+                sessionStorage.removeItem('sessionValue');
+                alert('Session value cleared successfully!');
+            }
+
+        </script>
+</body>
+</html>

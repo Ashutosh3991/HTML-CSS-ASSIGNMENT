@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cookies</title>
+</head>
+<body>
+  <h1>Cookie</h1>
+  <p>Click the buttons below to create, read, update, and delete a cookie:</p>
+  <button onclick="createCookie()">Create Cookie</button>
+  <button onclick="readCookie()">Read Cookie</button>
+  <button onclick="updateCookie()">Update Cookie</button>
+  <button onclick="deleteCookie()">Delete Cookie</button>
+  <p id="cookie-value"></p>
+</body>
+</html>
+<script>
+    // Function to create a cookie
+function createCookie() {
+  document.cookie = "username=John Doe; expires=Thu, 09 March 2023 12:00:00 UTC; path=/";
+  alert("Cookie created!");
+}
+
+// Function to read a cookie
+function readCookie() {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + "username" + "=");
+  if (parts.length == 2) {
+    document.getElementById("cookie-value").innerHTML = "Username: " + parts.pop().split(";").shift();
+  } else {
+    alert("Cookie not found!");
+  }
+}
+
+// Function to update a cookie
+function updateCookie() {
+  document.cookie = "username=Jane Doe; expires=Thu, 9 March 2023 19:00:00 UTC; path=/";
+  alert("Cookie updated!");
+}
+
+// Function to delete a cookie
+function deleteCookie() {
+  document.cookie = "username=; expires=Thu, 09 March 2023 16:00:00 UTC; path=/;";
+  alert("Cookie deleted!");
+}
+
+</script>

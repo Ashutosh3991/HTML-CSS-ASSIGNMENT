@@ -1,43 +1,43 @@
 menuItems= [
     {
         "id": 1,
-        "name": 'Product1',
+        "name": 'Pizza',
         "price": 105.00,
         
     },
     {
         "id": 2,
-        "name": "Product2",
+        "name": "Pasta",
         "price": 105.00,
         
     },
     {
         "id": 3,
-        "name": "Product3",
+        "name": "French Fries",
         "price": 105,
         
     },
     {
         "id": 4,
-        "name": "Product4",
+        "name": "Veg Burger",
         "price": 180,
         
     },
     {
         "id": 5,
-        "name": "Product5",
+        "name": "Grilled Sandwich",
         "price": 200,
         
     },
     {
         "id": 6,
-        "name": "Product6",
+        "name": "Momos",
         "price": 20,
         
     },
     {
         "id": 7,
-        "name": "Product7",
+        "name": "Panner Tikka",
         "price": 150,
     },
 ]
